@@ -11,6 +11,10 @@
   -  Creating a basic directory structure for models, views, and controllers
   Setting up a default welcome page
 
+## Functionality
+
+![Rails-App](https://user-images.githubusercontent.com/111542956/219984534-97da79fe-e928-497c-aaba-4166447a1b55.png)
+
 Dockerfile:
 
 - `FROM --platform=linux/amd64 ruby:3.1.0-alpine`
@@ -76,9 +80,6 @@ Kubernetes, also known as K8s, is an open-source system for automating deploymen
 ## Jenkins
 Jenkins is an open-source automation tool written in Java with plugins built for continuous integration. Jenkins is used to build and test software projects continuously making it easier for developers to integrate changes to the project, and making it easier for users to obtain a fresh build. It also allows you to continuously deliver your software by integrating with a large number of testing and deployment technologies.
 
-## Functionality
-
-![](https://file%2B.vscode-resource.vscode-cdn.net/Users/choko/Desktop/App/G2/Untitled%20Diagram.drawio%20%281%29.png?version%3D1676560441802)
 
 ## Step 1: Deploying a containerized cluster on AWS
 
