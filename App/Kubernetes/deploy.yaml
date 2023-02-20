@@ -55,4 +55,4 @@ spec:
           service:
             name: rails-app
             port:
-              number: 300
+              number: 3000
