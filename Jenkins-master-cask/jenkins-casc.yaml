@@ -100,14 +100,14 @@ jenkins:
   viewsTabBar: "standard"
 jobs:
     - script: >
-        multibranchPipelineJob('exchange-22b-ubuntu') {
+        multibranchPipelineJob('jengo-dev') {
           branchSources {
             git {
                 // The id option in the Git and GitHub branch source contexts is now mandatory (JENKINS-43693).
-                id('exchange-22b') // IMPORTANT: use a constant and unique identifier
+                id('jengo-dev') // IMPORTANT: use a constant and unique identifier
                 credentialsId('github_credentials')
-                remote('git@github.com:312-bc/exchange-22b-ubuntu.git')
-                includes('master*')
+                remote('git@github.com:Solongo65/Maven-Wave.git')
+                includes('jengo*')
             }
           }
           orphanedItemStrategy {
@@ -117,39 +117,22 @@ jobs:
           }
         }
     - script: >
-          multibranchPipelineJob('weather-app-22b-ubuntu') {
-            branchSources {
-              git {
-                  // The id option in the Git and GitHub branch source contexts is now mandatory (JENKINS-43693).
-                  id('weather-app-22b') // IMPORTANT: use a constant and unique identifier
-                  credentialsId('github_credentials')
-                  remote('git@github.com:312-bc/weather-app-22b-ubuntu.git')
-                  includes('master* weather-prod* weather-dev* mihai-weather-dev')
-              }
-            }
-            orphanedItemStrategy {
-              discardOldItems {
-                numToKeep(1)
-              }
+        multibranchPipelineJob('jengo-dev') {
+          branchSources {
+            git {
+                // The id option in the Git and GitHub branch source contexts is now mandatory (JENKINS-43693).
+                id('rails-dev') // IMPORTANT: use a constant and unique identifier
+                credentialsId('github_credentials')
+                remote('git@github.com:Solongo65/Rails.git')
+                includes('rails*')
             }
           }
-    - script: >
-          multibranchPipelineJob('versus-22b-ubuntu') {
-            branchSources {
-              git {
-                  // The id option in the Git and GitHub branch source contexts is now mandatory (JENKINS-43693).
-                  id('versus-22b') // IMPORTANT: use a constant and unique identifier
-                  credentialsId('github_credentials')
-                  remote('git@github.com:312-bc/versus-22b-ubuntu.git')
-                  includes('master*')
-              }
-            }
-            orphanedItemStrategy {
+          orphanedItemStrategy {
               discardOldItems {
                 numToKeep(1)
-              }
             }
-          }        
+          }
+        }     
 globalCredentialsConfiguration:
   configuration:
     providerFilter: "none"
