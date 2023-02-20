@@ -10,7 +10,7 @@ WORKDIR /app
 # Install gems
 COPY Gemfile Gemfile.lock ./
 
-RUN bundle install --jobs $(nproc) --retry 3
+RUN bundle install
 
 # Copy the application code into the container
 COPY . .
